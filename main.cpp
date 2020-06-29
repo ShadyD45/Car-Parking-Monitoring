@@ -14,15 +14,15 @@ class MyWindow
 				WINDOW *local_win;
 				local_win = newwin(height, width, starty, startx);
 				box(local_win, 0 , 0);		/* 0, 0 gives default characters 
-							   	 			* for the vertical and horizontal
-								 			* lines					*/	
+							   	 * for the vertical and horizontal lines
+								*/	
 
 				wrefresh(local_win);		/* Show that box 		*/
 				
 				return local_win;
 			}
 				
-			void slot_color(WINDOW *my_win,int status)
+			void slot_color(WINDOW *my_win,int status)	//Colour the specified window representing the parking space
 			{
 				start_color();
 				init_pair(1, COLOR_BLACK, COLOR_GREEN);
@@ -79,7 +79,7 @@ int main()
 		for(i=0;i<n;i++)
 		{
 			
-			read_port(status);
+			ReadSerialPort(status); // Read the sensor data from the serial port
 			if(i<4)
 			{
 				x[i]=startx*b;	
