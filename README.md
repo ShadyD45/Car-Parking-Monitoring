@@ -10,3 +10,6 @@
   2) IR Sensors (The program currently supports only this type of sensor)
   3) USB connector (To connectthe UNO Board to a Computer)
   4) Male-Female Connectors (To connect Sensor to the UNO Board)
+  5) Set-up Ncurses Library on the computer (The library is used for UI)
+       Download the library from here https://ftp.gnu.org/pub/gnu/ncurses/
+   
