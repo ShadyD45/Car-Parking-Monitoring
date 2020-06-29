@@ -2,7 +2,7 @@
 #include<stdlib.h>
 
 /* This function is used to read the sensor data from the Serial port (USB Port) */
-void read_port(int st[])
+void ReadSerialPort(int st[])
 {
 	int i=0;
 	FILE *fp;
