@@ -22,3 +22,5 @@ void ReadSerialPort(int st[])
 
 	fclose(fp);
 }
+
+
