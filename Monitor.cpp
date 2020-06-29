@@ -1,3 +1,7 @@
+/*
+*	This file contains the main() function and a class to create the Monitoring UI 
+*/
+
 #include<iostream>
 #include<stdio.h>
 #include"read_port.c"
