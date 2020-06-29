@@ -3,8 +3,10 @@
 #include<stdio.h>
 
 int addr = 0x0378;
-
-read_port(])
+/*
+ Function is used To read sensor data from the parallel port
+*/
+ReadParallelPort()
 {
 	int status = open("/dev/ttyS1",O_RDWR);
 	ioperm(addr,255,1);
