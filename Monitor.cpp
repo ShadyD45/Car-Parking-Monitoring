@@ -4,11 +4,11 @@
 
 #include<iostream>
 #include<stdio.h>
-#include"read_port.c"
 #include<ncurses.h>
 #include<unistd.h>
-using namespace std;
+#include"ReadPorts.c"
 
+using namespace std;
 
 class MyWindow
 {			
