@@ -1,3 +1,4 @@
+// Upload this program into the Arduino to send the sensor data to the machine
 const int ProxSensor=2;
 int inputVal = 1;
 
