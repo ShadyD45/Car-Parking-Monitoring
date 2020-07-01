@@ -18,8 +18,8 @@ class MyWindow
 				WINDOW *local_win;
 				local_win = newwin(height, width, starty, startx);
 				box(local_win, 0 , 0);		/* 0, 0 gives default characters 
-							   	 * for the vertical and horizontal lines
-								*/	
+							   	 			*  for the vertical and horizontal lines
+											*/	
 
 				wrefresh(local_win);		/* Show that box 		*/
 				
@@ -31,24 +31,21 @@ class MyWindow
 				start_color();
 				init_pair(1, COLOR_BLACK, COLOR_GREEN);
 				init_pair(2, COLOR_BLACK, COLOR_RED);
-				if(status==0){
+				if(status==0)
+				{
 					wbkgd(my_win,COLOR_PAIR(2));
 				}
-				else{
+				else
+				{
 					wbkgd(my_win,COLOR_PAIR(1));
 				}
 				wrefresh(my_win);
-			}
-			
-				 
+			}			 
 };
-
 
 
 int main()
 {
-
-	
 	WINDOW *my_win[8];
 
 	initscr();			/* Start curses mode 			*/
@@ -77,9 +74,7 @@ int main()
 	cin >> n;
 
 	while(1)
-	{
-		
-			
+	{		
 		for(i=0;i<n;i++)
 		{
 			
