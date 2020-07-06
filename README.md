@@ -2,7 +2,7 @@
   To provide easy navigation and to make parking vehicles easier. 
   Even a person who is not qualified enough and just knows how to use a computer can use the system.
 
-  This is small program for monitor parking spaces with the use of sensors, The program represents each parking space with a square box on the screen.
+  This is small program for monitoring parking spaces with the use of sensors, The program represents each parking space with a square box on the screen.
   If a parking space is vacant then the square box turns to green color and if the parking space is in use then the square box turns to red color.the UNO board to
 
 *****The program is not quite flexible so it may be buggy on some machines*****
