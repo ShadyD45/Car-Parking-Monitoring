@@ -18,15 +18,15 @@ class MyWindow
 				WINDOW *local_win;
 				local_win = newwin(height, width, starty, startx);
 				box(local_win, 0 , 0);		/* 0, 0 gives default characters 
-							   	 			*  for the vertical and horizontal lines
-											*/	
+							   	 *  for the vertical and horizontal lines
+								 */	
 
-				wrefresh(local_win);		/* Show that box 		*/
+				wrefresh(local_win);		/* Show that box to represent the parking space	*/
 				
 				return local_win;
 			}
 				
-			void slot_color(WINDOW *my_win,int status)	//Colour the specified window representing the parking space
+			void slot_color(WINDOW *my_win,int status)	/* Colours the specified window representing the parking space */
 			{
 				start_color();
 				init_pair(1, COLOR_BLACK, COLOR_GREEN);
@@ -57,18 +57,17 @@ int main()
 
 	int height = 5;
 	int width = 15;
-	int starty = (LINES/8);	/* Calculating for a center placement */
-	int startx = (COLS/10);	/* of the window		*/
+	int starty = (LINES/8);		/* Calculating for a center placement   */
+	int startx = (COLS/10);		/* of the window			*/
 
 	refresh();
-		
-	char ch='/';			
+	
+	char s[8] = "Parking";	//String for naming the parking spaces
 	int n,i;
 	int j=0,k=3;
 	int x[8],y[8];	
 	int b=1,c=1;
 	int status[8]={1,1,1,1,1,1,1,1};
-	char s[15][15]={"Parking 1","Parking 2","Parking 3","Parking 4","Parking 5","Parking 6","Parking 7","Parking 8"};
 	
 	cout <<"\nEnter the no. of slots:--> ";
 	cin >> n;
@@ -77,18 +76,17 @@ int main()
 	{		
 		for(i=0;i<n;i++)
 		{
-			
-			ReadSerialPort(status); // Read the sensor data from the serial port
-			if(i<4)
+			ReadSerialPort(status); 	/* Read the sensor data from the serial port */
+			if(i<4) 
 			{
 				x[i]=startx*b;	
 				y[i]=starty;
 				MyWindow w[i];
-				if(j<=i)		/* To print the slots only n number of times*/
+				if(j<=i)		/* To print the slots only n number of times */
 				{
 					my_win[i]= w[i].create_newwin(height, width, y[i], x[i]);
 					j=j+1;
-					mvwprintw(my_win[i],2,5,"%s",s[i]);				
+					mvwprintw(my_win[i],2,5,"%s %d",s,i+1);					
 				}
 				w[i].slot_color(my_win[i],status[i]);
 				wrefresh(my_win[i]);
@@ -100,10 +98,10 @@ int main()
 				x[i]=startx*c;	
 				y[i]=starty*4;
 				MyWindow w[i];
-				if(k<i)		/* To print the slots only n number of times */
+				if(k<i)			/* To print the slots only n number of times */
 				{
 					my_win[i]= w[i].create_newwin(height, width, y[i], x[i]);
-					mvwprintw(my_win[i],2,5,"%s",s[i]);
+					mvwprintw(my_win[i],2,5,"%s %d",s,i+1);
 					k=k+1;
 				}				
 				w[i].slot_color(my_win[i],status[i]);
